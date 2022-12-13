@@ -1,0 +1,34 @@
+{
+  "name": "taksh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "cypress run",
+    "chorium-report": "cypress run --spec cypress/e2e/spec.cy.js --browser C:/chrome-win/chrome-win/chrome.exe --headed",
+    "html-report": "cypress run --spec cypress/e2e/spec.cy.js --browser electron --headed",
+    "cypress-with-allure": "cypress run --spec cypress/e2e/spec.cy.js --browser electron --headed --env allure=true",
+    "allure-report": "allure generate allure-results --clean -o allure-report",
+    "clean:folders": "rm -R -f allure-report/* && rm -R -f allure-results/*",
+    "beforetest": "npm run clean:folders"
+
+  },
+  "keywords": [
+    "cypress",
+    "testing", 
+    "javascript",
+    "typescript"
+  ],
+  "author": "Petros",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress-audit/lighthouse": "^1.3.1",
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "cypress": "^10.9.0",
+    "cypress-mochawesome-reporter": "^3.2.3"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^13.0.3"
+  }
+}
